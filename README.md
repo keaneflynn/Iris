@@ -1,18 +1,17 @@
 # Iris
 **Author**: Keane Flynn\
-**Organization**: Summit Lake Paiute Tribe\
 **Date**: 2025-12-12\
 **Contact**: keaneflynn1@gmail.com
 
 ## Overview
 Iris is an application to collect, broker, and append campbell datalogger data 
-to the SLPT internal SWEON PostgreSQL database. This is carried out by making
+to a PostgreSQL database. This is carried out by making
 an API query to the datalogger's internal backend for its most-recent, 
 non-appended data. The program injests a text file in json format and uses
 the relevant information to concatenate with datalogger data to create
 comprehensive data table records for each device. This program should work 
-universally with all SLPT data logger devices (including the lake profiler), 
-but this cannot be promised for non-CR6 or CR1000Xe datalogger models.
+universally with all Campbell data logger devices but this cannot be promised 
+for non-CR6 or CR1000Xe datalogger models.
 
 ## Prerequisites
 We will start by setting up the database tables for the climate, stream gauge,
@@ -33,8 +32,7 @@ probably run this on a microwave; it's that simple of code.
 
 While only tested on Campbell CR1000XEs and CR6s, this application should be 
 able to retrieve data from any modern Cambpbell datalogger with an operating
-system that is from 2022 - present. Matt Heigli will have done most of the 
-system configuration for these devices. The only change you might need to make
+system that is from 2022 - present. The only change you might need to make
 is to enable ICMP to allow for watchdog monitoring and to obtain the http login
 password and data table name through Device Configuration Utility. These values
 will be used in the next section of this document. 
@@ -106,7 +104,7 @@ sensors hooked up to the datalogger.
 ## How To Use
 Issue the following command in your terminal to clone the repository:
 ```
-git clone https://github.com/SummitLakeNRD/Iris.git
+git clone https://github.com/keaneflynn/Iris.git
 ```
 You will then need to change directories into the one you just cloned with 
 `cd Iris/`\
